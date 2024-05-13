@@ -1,23 +1,23 @@
+import { Route, Link, Routes } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
+import Exercises from './pages/Exercises';
+import Foods from './pages/Foods';
+import Goals from './pages/Goals';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <nav>
+        <Link to="/exercises">Exercises</Link>
+        <Link to="/foods">Foods</Link>
+        <Link to="/goals">Goals</Link>
+      </nav>
+      <Routes>
+        <Route path="/exercises" element={<Exercises />} />
+        <Route path="/foods" element={<Foods />} />
+        <Route path="/goals" element={<Goals />} />
+      </Routes>
     </div>
   );
 }
