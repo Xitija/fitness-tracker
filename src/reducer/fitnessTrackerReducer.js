@@ -1,5 +1,6 @@
 import { ACTIONS } from './actions.config';
 const initialState = {
+  exerciseTypes: [],
   exercises: [],
   foods: [],
   goals: [],
@@ -14,12 +15,25 @@ const fitnessTrackerReducer = (state = initialState, action) => {
         ...state,
         loading: true
       };
+    case ACTIONS.FETCH_EXERCISE_TYPES_SUCCESS:
+      return {
+        ...state,
+        exerciseTypes: action.payload,
+        loading: false,
+        error: null
+      }
     case ACTIONS.FETCH_EXERCISES_SUCCESS:
       return {
         ...state,
         exercises: action.payload,
         loading: false,
         error: null
+      };
+    case ACTIONS.FETCH_EXERCISE_TYPES_FAILURE:
+      return {
+        ...state,
+        loading: false,
+        error: 'Error fetching Exercises Type data'
       };
     case ACTIONS.FETCH_EXERCISES_FAILURE:
       return {

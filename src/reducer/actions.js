@@ -1,6 +1,21 @@
 import { ACTIONS } from './actions.config';
 const HOST_URL = `https://5fd48a0a-ace9-48ec-a835-07f1abccf3a4-00-3l4ms0w1xvxfi.worf.replit.dev/api`;
 
+const fetchExerciseTypes = () => async (dispatch) => {
+  try {
+    dispatch({ type: ACTIONS.FETCH_DATA_LOADING });
+    const response = await fetch(HOST_URL + `/exercise-types`);
+    let data = [];
+    if (response.status === 200) {
+      data = await response.json();
+    }
+    dispatch({ type: ACTIONS.FETCH_EXERCISE_TYPES_SUCCESS, payload: data })
+  } catch (error) {
+    console.error('Error fetching exerciseTypes')
+    dispatch({ type: ACTIONS.FETCH_EXERCISE_TYPES_FAILURE })
+  }
+}
+
 const fetchExercises = () => async (dispatch) => {
   try {
     dispatch({ type: ACTIONS.FETCH_DATA_LOADING });
@@ -160,6 +175,7 @@ export {
   fetchExercises,
   fetchFoods,
   fetchGoals,
+  fetchExerciseTypes,
   removeExercise,
   removeFood,
   removeGoal,
