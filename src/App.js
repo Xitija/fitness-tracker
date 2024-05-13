@@ -1,5 +1,4 @@
 import { Route, Link, Routes } from 'react-router-dom';
-import logo from './logo.svg';
 import './App.css';
 import Exercises from './pages/Exercises';
 import Foods from './pages/Foods';
@@ -7,11 +6,13 @@ import Goals from './pages/Goals';
 import ExerciseForm from './pages/ExerciseForm';
 import FoodForm from './pages/FoodForm';
 import GoalForm from './pages/GoalForm';
+import Dashboard from './pages/Dashboard';
 
 function App() {
   return (
     <div className="App">
       <nav>
+        <Link to="/dashboard">Dashboard</Link>
         <Link to="/exercises">Exercises</Link>
         <Link to="/foods">Foods</Link>
         <Link to="/goals">Goals</Link>
@@ -26,6 +27,7 @@ function App() {
         <Route path='/add-exercise' element={<ExerciseForm />} />
         <Route path='/add-food' element={<FoodForm />} />
         <Route path='/add-goal' element={<GoalForm />} />
+        <Route path='/dashboard' element={<Dashboard />} />
       </Routes>
     </div>
   );
