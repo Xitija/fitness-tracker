@@ -32,35 +32,37 @@ const ExerciseForm = () => {
   return (
     <div>
       <h1>Add New Exercise</h1>
-      <form>
-        <div>
-          <label>Select Exercise Type:</label>
-          <select
-            // value={exerciseType.exercise}
-            onChange={(e) => setExerciseType(JSON.parse(e.target.value))}
-          >
-            <option>Select exercise type</option>
-            {exerciseTypes.map((exType) => (
-              <option key={exType._id} value={JSON.stringify(exType)}>
-                {exType.exercise}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div>
-          <label>Calories Per Minute:</label>
-          <label>{exerciseType.caloriesPerMinute}</label>
-        </div>
-        <div>
-          <label>Enter duration in minutes:</label>
-          <input
-            value={durationInMinutes}
-            type="number"
-            onChange={(e) => setDurationInMinutes(e.target.value)}
-          />
-        </div>
-        <button onClick={handleAddExercise}>Add Exercise</button>
-      </form>
+      <fieldset>
+        <form>
+          <div>
+            <label>Select Exercise Type:</label>
+            <select
+              // value={exerciseType.exercise}
+              onChange={(e) => setExerciseType(JSON.parse(e.target.value))}
+            >
+              <option>Select exercise type</option>
+              {exerciseTypes.map((exType) => (
+                <option key={exType._id} value={JSON.stringify(exType)}>
+                  {exType.exercise}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div>
+            <label>Calories Per Minute:</label>
+            <label>{exerciseType.caloriesPerMinute}</label>
+          </div>
+          <div>
+            <label>Enter duration in minutes:</label>
+            <input
+              value={durationInMinutes}
+              type="number"
+              onChange={(e) => setDurationInMinutes(e.target.value)}
+            />
+          </div>
+          <button onClick={handleAddExercise}>Add Exercise</button>
+        </form>
+      </fieldset>
     </div>
   );
 };

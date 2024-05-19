@@ -19,18 +19,50 @@ const Goals = () => {
   return (
     <div>
       <h1>Goals</h1>
-      <ul>
-        {goals.map(
-          ({ _id, goalName, goalDescription, targetDate, targetCalories }) => (
-            <li key={_id}>
-              {goalName}-{goalDescription}-{targetDate}-{targetCalories}
-              <button value={_id} onClick={handleRemoveGoal}>
-                Remove Goal
-              </button>
-            </li>
-          )
-        )}
-      </ul>
+      <table>
+        <thead>
+          <tr>
+            <td>
+              <b>Goal name</b>
+            </td>
+            <td>
+              <b>Description</b>
+            </td>
+            <td>
+              <b>Target Date</b>
+            </td>
+            <td>
+              <b>Target Calories</b>
+            </td>
+            <td>
+              <b>Actions</b>
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          {goals.map(
+            ({
+              _id,
+              goalName,
+              goalDescription,
+              targetDate,
+              targetCalories
+            }) => (
+              <tr key={_id}>
+                <td>{goalName}</td>
+                <td>{goalDescription}</td>
+                <td>{targetDate}</td>
+                <td>{targetCalories}</td>
+                <td>
+                  <button value={_id} onClick={handleRemoveGoal}>
+                    Remove Goal
+                  </button>
+                </td>
+              </tr>
+            )
+          )}
+        </tbody>
+      </table>
     </div>
   );
 };

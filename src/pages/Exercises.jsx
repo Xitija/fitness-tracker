@@ -18,17 +18,38 @@ const Exercises = () => {
   return (
     <div>
       <h1>Exercises</h1>
-      <ul>
-        {exercises.map((exercise) => (
-          <li key={exercise._id}>
-            {exercise.exerciseType.exercise}-{exercise.durationInMinutes}-
-            {exercise.caloriesBurned}
-            <button value={exercise._id} onClick={handleRemoveExercise}>
-              Remove Exercise
-            </button>
-          </li>
-        ))}
-      </ul>
+      <table>
+        <thead>
+          <tr>
+            <td>
+              <b>Exercise Type</b>
+            </td>
+            <td>
+              <b>Duration(In Minutes)</b>
+            </td>
+            <td>
+              <b>Calories Burned</b>
+            </td>
+            <td>
+              <b>Action</b>
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          {exercises.map((exercise) => (
+            <tr key={exercise._id}>
+              <td>{exercise.exerciseType.exercise}</td>
+              <td>{exercise.durationInMinutes}</td>
+              <td>{exercise.caloriesBurned}</td>
+              <td>
+                <button value={exercise._id} onClick={handleRemoveExercise}>
+                  Remove Exercise
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };

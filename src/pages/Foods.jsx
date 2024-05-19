@@ -23,11 +23,12 @@ const Foods = () => {
       <table>
         <thead>
           <tr>
-            <td>Food name</td>
-            <td>Calories</td>
-            <td>Protein</td>
-            <td>Carbs</td>
-            <td>Fat</td>
+            <td><b>Food name</b></td>
+            <td><b>Calories</b></td>
+            <td><b>Protein</b></td>
+            <td><b>Carbs</b></td>
+            <td><b>Fat</b></td>
+            <td><b>Actions</b></td>
           </tr>
         </thead>
         <tbody>
