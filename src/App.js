@@ -37,6 +37,7 @@ function App() {
           <Route path='/add-food' element={<FoodForm />} />
           <Route path='/add-goal' element={<GoalForm />} />
           <Route path='/dashboard' element={<Dashboard />} />
+          <Route path='/' element={<Dashboard />} />
         </Routes>
       </div>
     </div>
