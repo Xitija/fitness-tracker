@@ -30,6 +30,7 @@ function App() {
       </div>
       <div className="container">
         <Routes>
+          <Route path='/' element={<Dashboard />} />
           <Route path="/exercises" element={<Exercises />} />
           <Route path="/foods" element={<Foods />} />
           <Route path="/goals" element={<Goals />} />
@@ -37,7 +38,6 @@ function App() {
           <Route path='/add-food' element={<FoodForm />} />
           <Route path='/add-goal' element={<GoalForm />} />
           <Route path='/dashboard' element={<Dashboard />} />
-          <Route path='/' element={<Dashboard />} />
         </Routes>
       </div>
     </div>
