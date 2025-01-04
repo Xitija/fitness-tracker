@@ -14,6 +14,7 @@ const Dashboard = () => {
   const foods = useSelector((state) => state.foods);
   const exercises = useSelector((state) => state.exercises);
   const goals = useSelector((state) => state.goals);
+  const error = useSelector((state) => state.error);
 
   useEffect(() => {
     dispatch(fetchExercises());
@@ -47,14 +48,30 @@ const Dashboard = () => {
     (totalCaloriesBurned / totalCaloriesToAchieve) * 100
   );
   return (
-    <div>
-      <h1>Dashboard</h1>
-      <h2>Total Calories Burned: {totalCaloriesBurned}</h2>
-      <h2>Total Calories Consumed: {totalCaloriesConsumed}</h2>
-      <h2>Total Calories Goal: {totalCaloriesToAchieve}</h2>
-      <h2>Remaining Calories to Goal: {remainingCaloriesToGoal}</h2>
-      <ProgressBar completed={remianingGoalPercentage} />
-    </div>
+    <>
+      <div>
+        <h1>Dashboard</h1>
+        <h2>Total Calories Burned: {totalCaloriesBurned}</h2>
+        <h2>Total Calories Consumed: {totalCaloriesConsumed}</h2>
+        <h2>Total Calories Goal: {totalCaloriesToAchieve}</h2>
+        <h2>Remaining Calories to Goal: {remainingCaloriesToGoal}</h2>
+        <ProgressBar completed={remianingGoalPercentage} />
+      </div>
+      {error && (
+        <div>
+          <h2>Server Not Active 😨</h2>
+          <h3>
+            <a
+              href="https://drive.google.com/file/d/1wgNn8uzAbVe82OA0gKRWZeo0TjUxPDwW/view?usp=drive_link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Click here to view video
+            </a>
+          </h3>
+        </div>
+      )}
+    </>
   );
 };
 
