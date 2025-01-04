@@ -59,3 +59,8 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+// https://agencyanalytics.com/blog/master-goals
+
+// if (!user) {
+//   dispatch(fetchUser(1));
+// }
