@@ -25,7 +25,7 @@ function App() {
           <Link className="link" to="/add-food">Add Food</Link>
           <Link className="link" to="/add-goal">Add Goal</Link>
           <a className="link" target="_blank" href="https://github.com/Xitija/fitness-tracker"><FaGithubSquare size={30} /></a>
-          <a className="link" target="_blank" href="https://replit.com/@xitija/Assignment-17"><FaServer size={30} /></a>
+          <a className="link" target="_blank" href="https://replit.com/@xitija/FitnessTracker?v=1"><FaServer size={30} /></a>
           <a className="link" target="_blank" href="https://documenter.getpostman.com/view/29778371/2sAYBbf9xD"><SiPostman size={30} /></a>
         </nav>
       </div>
