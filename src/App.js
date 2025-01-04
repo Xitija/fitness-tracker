@@ -1,6 +1,7 @@
 import { Route, Link, Routes } from 'react-router-dom';
 import { FaGithubSquare } from "react-icons/fa";
 import { FaServer } from "react-icons/fa6";
+import { SiPostman } from "react-icons/si";
 import './App.css';
 import Exercises from './pages/Exercises';
 import Foods from './pages/Foods';
@@ -25,7 +26,7 @@ function App() {
           <Link className="link" to="/add-goal">Add Goal</Link>
           <a className="link" target="_blank" href="https://github.com/Xitija/fitness-tracker"><FaGithubSquare size={30} /></a>
           <a className="link" target="_blank" href="https://replit.com/@xitija/Assignment-17"><FaServer size={30} /></a>
-
+          <a className="link" target="_blank" href="https://documenter.getpostman.com/view/29778371/2sAYBbf9xD"><SiPostman size={30} /></a>
         </nav>
       </div>
       <div className="container">
